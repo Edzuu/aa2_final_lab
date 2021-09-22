@@ -12,6 +12,8 @@
 - name: update resolve.conf
   hosts: load_balancers,app_servers,database_servers
   become: true
+  vars:
+    GUID: 0cf0 
 
   tasks:
     - name: Get control node network settings
