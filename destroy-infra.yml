@@ -1,0 +1,14 @@
+- name: Deprovision OSP instances
+  hosts: control_node
+  gather_facts: no
+  become: no
+
+  tasks:
+  - name: Destroy OSP instance
+    os_server:
+        name: '{{ __openstack_server.instance_name }}'
+        state: absent
+    loop: '{{ openstack_servers }}'
+    loop_control:
+        loop_var: __openstack_server
+        label: '{{ __openstack_server.instance_name }}'
