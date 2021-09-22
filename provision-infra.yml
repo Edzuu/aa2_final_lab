@@ -1,0 +1,4 @@
+- import_playbook: manage-openstack-servers.yml
+- import_playbook: test_connectivity.yml
+- import_playbook: dns-configuration.yml
+- import_playbook: bind9-configuration.yml
