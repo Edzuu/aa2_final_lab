@@ -1,0 +1,8 @@
+#control ansible_ssh_host=control."{{ GUID }}".internal
+control ansible_ssh_host=control.example.com
+
+[control_node]
+localhost ansible_connection=local
+
+[all:vars]
+GUID="{{ lookup('env', 'GUID') }}"
